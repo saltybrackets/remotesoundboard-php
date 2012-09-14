@@ -17,10 +17,10 @@ function sortlist() {
 function caseInsensitiveSort(a, b) 
 { 
 	var ret = 0;
-	a = a.toLowerCase();b = b.toLowerCase();
+	a = a.toLowerCase(); b = b.toLowerCase();
 	if(a > b) 
-	ret = 1;
+		ret = 1;
 	if(a < b) 
-	ret = -1; 
+		ret = -1; 
 	return ret; 
 }

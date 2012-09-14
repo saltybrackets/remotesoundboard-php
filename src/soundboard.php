@@ -9,33 +9,9 @@ if ($_POST['txtUsername'] == $username or ($_COOKIE["txtUsername"] == $username 
 if ($_COOKIE["txtUsername"] != "amani")
 	setcookie ("txtUsername", "amani");
 
-$sortFunction =	"<script language=\"JavaScript\" type=\"text/javascript\">
-					function sortlist() {
-					var lb = document.getElementById('listboxSounds');
-					arrTexts = new Array();
-					for(i=0; i<lb.length; i++)  {
-					arrTexts[i] = lb.options[i].text;
-					}
+$sortFunction = "<script type=\"text/javascript\" language=\"javascript\" src=\"sortList.js\"></script>";	
 
-					arrTexts.sort(caseInsensitiveSort);
-
-					for(i=0; i<lb.length; i++)  {
-					lb.options[i].text = arrTexts[i];
-					lb.options[i].value = arrTexts[i]; 
-					}
-					}
-					
-					function caseInsensitiveSort(a, b) 
-					{ 
-					var ret = 0;
-					a = a.toLowerCase();b = b.toLowerCase();
-					if(a > b) 
-					ret = 1;
-					if(a < b) 
-					ret = -1; 
-					return ret;
-					}
-					
+$pageFunctions = "<script language=\"JavaScript\" type=\"text/javascript\">
 					function timedCount()
 					{
 					SoundboardAction = readFile();
@@ -81,8 +57,8 @@ closedir($dir);
 $mySelect .= "</select>";
 
 ob_start();
-echo "<head><link rel='shortcut icon' href='sndbo.ico'><title>Sojo Soundboard</title>";
-echo $sortFunction . "</head>";
+echo "<head><link rel='shortcut icon' href='sndbo.ico'><link rel='stylesheet' type='text/css' href='sb-stylesheet.css' /><title>Sojo Soundboard</title>";
+echo $sortFunction . $pageFunctions . "</head>";
 echo "<body onload=\"sortlist('listboxSounds'); timedCount();\">";
 echo $mySelect;
 ?>
@@ -99,15 +75,6 @@ echo $mySelect;
     <br /><input type="text" title="Enter passcode" name="txtUsername" /></p>
     <p><input type="submit" name="Submit"  value="Open Sesame" /></p>
 </form>
-
-<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="165" height="38" id="niftyPlayer1" align="">
-<param name=movie value="niftyplayer.swf">
-<param name=quality value=high>
-<param name=bgcolor value=#FFFFFF>
-<embed src="niftyplayer.swf" quality=high bgcolor=#FFFFFF width="165" height="38" name="niftyPlayer1" align="" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
-</embed>
-</object>
-
 
 
 <?php // =============================================================================================================
