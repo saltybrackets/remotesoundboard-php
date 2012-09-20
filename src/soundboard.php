@@ -9,7 +9,7 @@ else if ($serverStatus == 'DEAD')
 ob_flush();
 $username = "amani";
 if ($_POST['txtUsername'] == $username or ($_COOKIE["txtUsername"] == $username && $_POST['txtUsername'] == "")) {
- 
+
 
 // ==================================================Actual Content=============================================
 if ($_COOKIE["txtUsername"] != "amani")
