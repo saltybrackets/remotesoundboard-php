@@ -30,7 +30,7 @@ $mySelect .= "<option value=\"".$file."\">".$file."</option>";
 }
 closedir($dir);
 $mySelect .= "</select>";
-
+ 
 ob_start();
 echo "<head><link rel='shortcut icon' href='sndbo.ico'><link rel='stylesheet' type='text/css' href='sb-stylesheet.css' /><title>Sojo Soundboard</title>";
 echo $pageFunctions . "</head>";
