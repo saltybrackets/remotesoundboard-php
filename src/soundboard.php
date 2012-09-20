@@ -1,6 +1,12 @@
 <?php
-
-
+$fileStatus = fopen('soundboard_action.txt', 'r');
+$serverStatus = fread($fileStatus, 4);
+fclose($fileStatus);
+if ($serverStatus == 'LOCK' && $_POST['txtUsername'] != 'fixitfixitfixit')
+	echo '<br><h3>Soundboard is currently LOCKED.</h3>';
+else if ($serverStatus == 'DEAD')
+	echo '<br><h3>Soundboard is currently OFFLINE.</h3>';
+ob_flush();
 $username = "amani";
 if ($_POST['txtUsername'] == $username or ($_COOKIE["txtUsername"] == $username && $_POST['txtUsername'] == "")) {
 
@@ -9,45 +15,14 @@ if ($_POST['txtUsername'] == $username or ($_COOKIE["txtUsername"] == $username 
 if ($_COOKIE["txtUsername"] != "amani")
 	setcookie ("txtUsername", "amani");
 
-$sortFunction = "<script type=\"text/javascript\" language=\"javascript\" src=\"sortList.js\"></script>";	
-
-$pageFunctions = "<script language=\"JavaScript\" type=\"text/javascript\">
-					function timedCount()
-					{
-					SoundboardAction = readFile();
-					if (SoundboardAction.substring(0,4) == \"PLAY\") {
-						SoundToPlay = SoundboardAction.substring(5);
-						sidecatcontrol.location.href='http://www.primitiveconcept.com/Sojo/SB/sound_processor.php?action=idle';
-						niftyplayer('niftyPlayer1').loadAndPlay('Sounds/' + SoundToPlay);
-					}
-					t=setTimeout(\"timedCount()\",500);
-					}
-					
-					function readFile()
-					{
-					var oRequest = new XMLHttpRequest();
-					var sURL = \"http://\"
-							 + self.location.hostname
-							 + \"/Sojo/SB/soundboard_action.txt\";
-
-					oRequest.open(\"POST\",sURL,false);
-					oRequest.setRequestHeader(\"User-Agent\",navigator.userAgent);
-					oRequest.setRequestHeader(\"Cache-Control\", \"no-cache, must-revalidate\");
-					oRequest.setRequestHeader(\"If-Modified-Since\",\"\");
-					oRequest.send(null)
-	
-					return oRequest.responseText;
-					}
-					
-				</script>
-				<script type=\"text/javascript\" language=\"javascript\" src=\"niftyplayer.js\"></script>";
+$pageFunctions = '<script type="text/javascript" language="javascript" src="soundboard.js"></script>';	
 
 
 
 $mySelect = "<h2>Sojo Soundboard</h2>
 	<button onclick=\"sidecatcontrol.location.href='sound_processor.php?action=play&param1=' + document.getElementById('listboxSounds').value\">Play It</button><br>
 	<select name='listboxSounds' id='listboxSounds' size='44' ondblclick=\"sidecatcontrol.location.href='sound_processor.php?action=play&param1=' + document.getElementById('listboxSounds').value\">";
-$dir = opendir("/home/cp25004/public_html/Sojo/SB/Sounds/");
+$dir = opendir(getcwd() . "/Sounds/");
 while($file=readdir($dir)){
 if ($file != "." && $file != ".."){
 $mySelect .= "<option value=\"".$file."\">".$file."</option>";
@@ -58,7 +33,7 @@ $mySelect .= "</select>";
 
 ob_start();
 echo "<head><link rel='shortcut icon' href='sndbo.ico'><link rel='stylesheet' type='text/css' href='sb-stylesheet.css' /><title>Sojo Soundboard</title>";
-echo $sortFunction . $pageFunctions . "</head>";
+echo $pageFunctions . "</head>";
 echo "<body onload=\"sortlist('listboxSounds'); timedCount();\">";
 echo $mySelect;
 ?>
@@ -125,15 +100,4 @@ echo $mySelect;
 
 <?php
 }
-?>
-
-<?php
-$fileStatus = fopen('soundboard_action.txt', 'r');
-$serverStatus = fread($fileStatus, 4);
-fclose($fileStatus);
-if ($serverStatus == 'LOCK' && $_POST['txtUsername'] != 'fixitfixitfixit')
-	echo '<br><h3>Soundboard is currently LOCKED.</h3>';
-else if ($serverStatus == 'DEAD')
-	echo '<br><h3>Soundboard is currently OFFLINE.</h3>';
-ob_flush();
 ?>
