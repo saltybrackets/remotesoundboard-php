@@ -34,7 +34,7 @@ $mySelect .= "</select>";
 ob_start();
 echo "<head><link rel='shortcut icon' href='sndbo.ico'><link rel='stylesheet' type='text/css' href='sb-stylesheet.css' /><title>Sojo Soundboard</title>";
 echo $pageFunctions . "</head>";
-echo "<body onload=\"sortlist('listboxSounds'); timedCount();\">";
+echo "<body onload=\"sortlist('listboxSounds')\">";
 echo $mySelect;
 ?>
 <iframe src="addsound.html" frameborder="0" align="top" name="addsound" id="addsound" width=300 height=200></iframe>
