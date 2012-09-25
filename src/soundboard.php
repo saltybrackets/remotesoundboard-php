@@ -27,7 +27,7 @@ while($file=readdir($dir)){
 if ($file != "." && $file != ".."){
 $mySelect .= "<option value=\"".$file."\">".$file."</option>";
 }
-}
+} 
 closedir($dir);
 $mySelect .= "</select>";
 
