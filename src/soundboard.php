@@ -12,7 +12,7 @@ if ($_POST['txtUsername'] == $username or ($_COOKIE["txtUsername"] == $username 
 
 
 // ==================================================Actual Content=============================================
-if ($_COOKIE["txtUsername"] != "amani")
+if ($_COOKIE["txtUsername"] != "amani") 
 	setcookie ("txtUsername", "amani");
 
 $pageFunctions = '<script type="text/javascript" language="javascript" src="soundboard.js"></script>';	
