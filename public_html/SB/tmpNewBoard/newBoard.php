@@ -4,8 +4,16 @@
 <script src="jqueryFileTree.js"></script>
 
 <script type="text/javascript">
+
+// http://www.abeautifulsite.net/blog/2008/03/jquery-file-tree/
 $(document).ready( function() {
-    $('#test').fileTree({ root: '../' }, function(file) {
+    $('#listSounds').fileTree({
+        root: 'Sounds',
+        script: 'jqueryFileTree.php',
+        expandSpeed: 1000,
+        collapseSpeed: 1000,
+        multiFolder: false
+    }, function(file) {
         alert(file);
     });
 });
