@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<configSB>
+		<mysql>
+			<server>www.example.com</server>
+			<user>username</user>
+			<pass>password</pass>
+		</mysql>
+		<password protected="true">password</password>
+		<styles>
+			<tree>fileTree.css</tree>
+			<index>soundboard.css</index>
+		</styles>	
+	</configSB>
