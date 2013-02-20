@@ -1,1 +1,304 @@
 @CHARSET "ISO-8859-1";
+
+	body {
+		background: #000;
+	}
+
+
+
+/* --------------------------------------------- Scrollbar ---------------------------------------------- */
+
+	::-webkit-scrollbar {
+	    width: 10px;
+	    -webkit-border-radius:4px;
+	    background: #222;
+	}
+	
+	::-webkit-scrollbar-thumb {
+		background-color: rgba(200, 200, 200, 0.7);
+		-webkit-box-shadow: inset 0 0 6px #222; 
+		-webkit-border-radius: 1em;
+	}
+	
+	::-webkit-scrollbar-track-piece { 
+		height: 1px; line-height: 1px; background: #222; 
+	}
+
+
+
+/* --------------------------------- Global Element Styles ------------------------------------------ */
+
+	td {
+		vertical-align: top;
+		text-align: left;
+	}
+	
+	input[type=checkbox] {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+		
+		height: 14px; width: 14px;
+		vertical-align: middle;
+		
+		background: #633;
+		
+		border: 2px solid #844;
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;
+		border-radius: 8px;
+	}
+	input[type=checkbox]:checked {
+		border: 3px solid #0F0;
+		background: #0D0;
+	}
+	
+	input[type=submit], input[type=button] {
+		height: 35px;
+		vertical-align: middle;
+		text-align: center;
+		
+		background: #444;
+		background: -webkit-linear-gradient(90deg, #444, #777 );
+		background: -moz-linear-gradient(90deg, #444, #777 );
+		background: -ms-linear-gradient(90deg, #444, #777 );
+		
+		color: #000;
+		font-family: helvetica, sans-serif;
+		font-weight: bold;
+
+		border: 1px solid #111;
+		border-radius: 18px;
+		-webkit-border-radius: 18px;
+		-moz-border-radius: 18px;	
+	}
+	input[type=submit]:active, input[type=button]:active {
+		position:relative;
+		top:1px;
+	}
+	
+	input[type=text] {
+		background: #222;
+		color: #FFF;
+		
+		padding-left: 5px;
+		
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;	
+		
+	}
+	
+	input[type=number] {
+		background: #222;
+		color: #FFF;
+		
+		padding-left: 5px;
+		
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		
+	}
+	
+	input.exit {
+		height: 25px;
+		width: 25px;
+		float: right;
+		
+		background: #000;
+		background: url('../images/exit.png') left top no-repeat;
+		
+		color: #FFF;
+		font-family: helvetica, sans-serif;
+		font-weight: bold;
+
+		border: none;
+		border-radius: 8px;
+		-webkit-border-radius: 8px;
+		-moz-border-radius: 8px;			
+	}
+	
+	div.popup {
+		display: none;
+		visibility: hidden;
+		
+		background: #888;
+		
+		font-family: "Arial Black", Arial, sans-serif;
+		font-weight: 900;
+		color: #000;
+		
+		position: fixed;
+		width: 400;
+		top: 240px;
+		left: 50%;
+		margin-left: -200px;
+		padding: 10px;
+		
+		outline: 2px solid #AAA;
+		border-style: solid;
+		border-width: 10px;
+		border-color: #000;
+		
+		text-align: center;
+		align: center;
+	}
+	
+	.font_white {
+		color: #FFF;
+		font-family: helvetica, sans-serif;
+		font-weight: bold;	
+	}
+
+
+
+/* --------------------------------- Individual Element Styles ------------------------------------------ */
+
+	input#btnPlay {
+		height: 70px;
+		width: 70px;
+		vertical-align: middle;
+		margin-right: 0.5em;
+		
+		background-color: #333;
+		background: -webkit-radial-gradient(circle, #999, #111);
+		background: -moz-radial-gradient(circle, #999, #111);
+		background: -ms-radial-gradient(circle, #999, #111);
+		
+		text-align: center;
+		color: #DDD;
+		font-family: helvetica, sans-serif;
+		font-weight: bold;
+		font-size: 18px;
+		
+		box-shadow: 1px 1px 1px #777;
+		-moz-box-shadow: 1px 1px 1px #777;
+		-webkit-box-shadow: 1px 1px 1px #777;
+		
+		border: 2px solid #BBB;	
+		border-radius: 35px;
+		-moz-border-radius: 35px;
+		-webkit-border-radius: 35px;
+	}
+	
+	input#btnLock {
+		height: 20px;
+		width: 20px;
+		
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4f4f4f', endColorstr='#8a8a8a');
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4f4f4f), color-stop(1, #8a8a8a) );
+		background:-moz-linear-gradient( center top, #4f4f4f 5%, #8a8a8a 100% );
+		background: #777 url('../images/lock.png') no-repeat;
+		background-position: center center;
+		background-size: 12px 12px;
+		
+		-moz-box-shadow:inset 0px 0px 10px 0px #c2c2c2;
+		-webkit-box-shadow:inset 0px 0px 10px 0px #c2c2c2;
+		box-shadow:inset 0px 0px 10px 0px #c2c2c2;
+	
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border-radius:5px;
+		border:1px solid #666666;
+	}
+	input#btnLock:active {
+		position:relative;
+		top:1px;
+	}
+	
+	
+	img#imgLogo {
+		text-align: center;
+		display: block;
+		margin: 1px auto;
+		margin-left: auto; margin-right: auto;
+	}
+	
+
+
+/* --------------------------------- INDIVIDUAL DIV STYLES ------------------------------------------ */
+	div#sbMain {
+		background: #333;
+		
+		margin-top: 0px;
+		margin-left: auto; margin-right: auto;
+		padding: 10px;
+		
+		horizontal-align: middle;
+		
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;	
+		
+		width: 730px;
+		height: auto;
+	}
+	
+	div#serverControls {
+		background: #666;
+			
+		width: 700px;
+		height: 80px;
+		padding: 5px;
+		margin: 5px;
+		margin-left: auto; margin-right: auto;
+		
+		border-style: solid;
+		border-color: #777;
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;	
+		
+		text-align: left;
+		vertical-align: top;
+		
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;	
+	}
+	
+	div#statusBar {
+		background: #000;
+		width: 700px;
+		min-height: 24px;
+		padding: 2px;
+		padding-left: 5px;
+		margin-left: auto; margin-right: auto;
+		
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		
+		font-family: arial black;
+		font-weight: bold;
+		color: #060;
+		text-align: left;
+		vertical-align: middle;
+		
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;		
+	}
+	
+	div#soundSelector {
+		background: #222;
+		color: #FFF;
+		
+		width: 710px;
+		height: 450px;	
+		overflow: scroll;
+		overflow-x: hidden;	
+			
+		padding: 5px;
+		margin: 5px;
+		margin-left: auto; margin-right: auto;
+		
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+	}

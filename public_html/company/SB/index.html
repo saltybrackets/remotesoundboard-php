@@ -1,0 +1,150 @@
+﻿<html>
+<head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+<!-- ----------------------------------------------------------HEAD---------------------------------------------------------------------- -->
+	
+	<!-- Title -->
+	<title>Remote Soundboard</title>
+
+	<!-- Shortcut Icon -->
+	<link rel='shortcut icon' href='images/favicon.ico' />
+	
+
+	<!-- ----------CSS STYLESHEETS---------- -->	
+		<!-- Soundboard CSS -->
+		<link rel=stylesheet href="css/soundboard.css" type="text/css" />
+		
+		<!-- Filetree CSS -->
+		<link rel=stylesheet href="css/fileTree.css" type="text/css" />
+		
+		<!-- Flash object CSS -->
+		<style type="text/css" media="screen"> #flashContent { display:none; } </style> 
+	
+	
+	<!-- --------------SCRIPTS-------------- -->	
+		<!-- External scripts -->
+		<script src="scripts/swfobject.js"></script>
+		<script src="scripts/jquery.js"></script>
+		<script src="scripts/jqueryFileTree.js"></script>
+		<script src="scripts/soundboard.js"></script>
+		
+</head>
+<body>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ----------------------------------------------------------HTML---------------------------------------------------------------------- -->	
+		
+		<!-- Logo -->
+		<img src="images/psicat.png" id=imgLogo />
+		
+		<!-- Main Div -->
+		<div id=sbMain>
+			
+			<!-- 'Server' Controls -->
+			<div id=serverControls>
+				<table class=font_white><tr>
+					<td width=50%>
+						<!-- Channel -->
+						Channel: <input type=text id=txtChannel value="default" /><br>
+	
+						<!-- Act as Speaker -->
+						Act as Speaker: <input type=checkbox id=chkSpeaker />
+					</td>
+					
+					<td width=50% style="padding-left: 50px">
+						<!-- Lock -->
+						<input type=button id=btnLock>
+						<input type=number id=txtLock  
+							style="width: 60px"
+							placeholder="Lock"
+							onblur='setTimeout( "$(&#39;#txtLock&#39;).val(&#39;&#39;)" , 100)' 
+							/>
+						<span style="font-size: 12px; font-weight: normal">minutes</span>
+					</td>
+					
+					<!-- Play Button -->
+					<td>
+						<input type=button id=btnPlay value="►" />
+					</td>
+
+				</tr></table>		
+			</div>
+			
+			<!-- Status Bar -->
+			<div id=statusBar>
+				Client-Mode: Idle
+			</div>
+	
+			<!-- Sounds List -->
+			<div id=soundSelector>
+				<!-- File Tree -->
+					<div id=treeSounds></div>
+			</div>
+			
+			<!-- File Upload Dialog -->
+			<div id=popupSoundUpload class=popup>
+				<input type=button id=exitSoundUpload class=exit>
+				Upload a WAV or MP3:<br><br>
+				<iframe src='addsound.html' id=frameAddSound
+					style='width: 300px; height: 50px; border: none; overflow: hidden'></iframe>
+			</div>
+			
+			<!-- Directory Creation Dialog -->
+			<div id=popupMakeDir class=popup>
+				<input type=button id=exitMakeDir class=exit>
+				Name of new folder:<br><br>
+				<input type=text id=txtMakeDir value=""><input type=button id=btnMakeDir value="Create">
+			</div>
+			
+			<!-- Generic Popup -->
+			<div id=popup class=popup>
+				<input type=button id=exitPopup class=exit>
+				<label id=popupMessage></label>
+			</div>
+			
+			<!-- TODO: A progress overlay that disables everything -->
+			
+        </div>
+        
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ----------------------------------------------------------FLASH OBJECT-------------------------------------------------------------- -->
+	<!-- SWFObject's dynamic embed method replaces this alternative HTML content with Flash content when enough 
+		JavaScript and Flash plug-in support is available. The div is initially hidden so that it doesn't show
+		when JavaScript is disabled.-->
+	<div id="flashContent">
+		<p>
+			To view this page ensure that Adobe Flash Player version 
+			11.1.0 or greater is installed. 
+		</p>
+		<script type="text/javascript"> 
+				var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://"); 
+				document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='" 
+                        + pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" ); 
+			</script> 
+	</div>   
+	<noscript>
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="0px" height="0px" id="SoundPlayer">
+			<param name="movie" value="SoundPlayer.swf" />
+			<!--[if !IE]>-->
+				<object type="application/x-shockwave-flash" data="SoundPlayer.swf" width="1px" height="1px">
+				<param name="allowScriptAccess" value="sameDomain" />
+				<!--<![endif]-->
+				<!--[if gte IE 6]>-->
+					<p> 
+						Either scripts and active content are not permitted to run or Adobe Flash Player version
+						11.1.0 or greater is not installed.
+					</p>
+				<!--<![endif]-->
+					<a href="http://www.adobe.com/go/getflashplayer">
+					<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash Player" />
+					</a>
+				<!--[if !IE]>-->
+				</object>
+			<!--<![endif]-->
+		</object>
+	</noscript>
+<!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+	
+	
+</body>
+</html>

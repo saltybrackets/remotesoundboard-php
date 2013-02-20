@@ -1,9 +1,10 @@
-UL.jqueryFileTree {
+UL.jqueryFileTree {	
+	padding: 5px;
+	margin: 0px;	
+	
 	font-family: Verdana, sans-serif;
-	font-size: 11px;
-	line-height: 18px;
-	padding: 0px;
-	margin: 0px;
+	font-size: 12px;
+	line-height: 18px;	
 }
 
 UL.jqueryFileTree LI {
@@ -15,21 +16,29 @@ UL.jqueryFileTree LI {
 }
 
 UL.jqueryFileTree A {
-	color: #333;
+	color: #FFF;
 	text-decoration: none;
 	display: block;
 	padding: 0px 2px;
 }
 
 UL.jqueryFileTree A:hover {
-	background: #BDF;
+	background: #777;
+}
+
+UL.jqueryFileTree A:click {
+	background: #779;
 }
 
 /* Core Styles */
-.jqueryFileTree LI.directory { background: url(directory.png) left top no-repeat; }
-.jqueryFileTree LI.expanded { background: url(folder_open.png) left top no-repeat; }
-.jqueryFileTree LI.file { background: url(file.png) left top no-repeat; }
-.jqueryFileTree LI.wait { background: url(spinner.gif) left top no-repeat; }
+.jqueryFileTree LI.directory { background: url('../images/directory.png') left top no-repeat; }
+.jqueryFileTree LI.expanded { background: url('../images/folder_open.png') left top no-repeat; }
+.jqueryFileTree LI.file { background: url('../images/file.png') left top no-repeat; }
+.jqueryFileTree LI.wait { background: url('../images/spinner.gif') left top no-repeat; }
 /* File Extensions*/
-.jqueryFileTree LI.ext_mp3 { background: url(music.png) left top no-repeat; }
-.jqueryFileTree LI.ext_wav { background: url(music.png) left top no-repeat; }
+.jqueryFileTree LI.ext_mp3 { background: url('../images/music.png') left top no-repeat; }
+.jqueryFileTree LI.ext_wav { background: url('../images/music.png') left top no-repeat; }
+/* Add & Random Listings */
+.jqueryFileTree LI.add_dir { background: url('../images/add.png') left top no-repeat; }
+.jqueryFileTree LI.add_file { background: url('../images/add.png') left top no-repeat; }
+.jqueryFileTree LI.play_random { background: url('../images/rand.png') left top no-repeat; }

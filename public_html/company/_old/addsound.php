@@ -7,7 +7,7 @@ echo "Attempting to upload " . $strSound . ".....<br>";
 
 if ($strExtension == ".mp3" || $strExtension == ".wav")
 {
-	$fileHandle = fopen("/home/cp25004/public_html/Sojo/SB/Sounds/" . $strSound,'w') or die("<br> Oops... FAIL! File may be too large, or is not an MP3.<br><br>");
+	$fileHandle = fopen("/home/primitj4/public_html/Sojo/SB/Sounds/" . $strSound,'w') or die("<br> Oops... FAIL! File may be too large, or is not an MP3.<br><br>");
 
 	//Upload file
 	if (basename($_FILES['fileUpload']['name']) !== "") 

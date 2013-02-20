@@ -5,17 +5,33 @@
 	<!-- ----------CSS STYLESHEETS---------- -->	
 		<!-- Soundboard CSS -->
 		<link rel=stylesheet href="css/soundboard.css" type="text/css" />
+		
+		<!-- Scripts -->
+		<script src="scripts/jquery.js"></script>
 
 </head>
-<body>
+<body style='background: #888; overflow: hidden; text-align: center; user-select: none'>
 <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
 <!-- ----------------------------------------------------------HTML---------------------------------------------------------------------- -->
-	<form enctype="multipart/form-data" action="scripts/upload.php" method="POST">
-		<input type=button value="Upload from Computer" style="align: center" onclick="$('#fileUpload').click()">
-		<br>
-		<input type=file id=fileUpload style="visibility: hidden">
-		<input type="submit" style="visibility: hidden">
-	</form>
+<div align=center>
+	<input type=button value="Upload from Computer" style="align: center" onclick="$('#fileUpload').click()">
+	<div style='visibility: hidden; height: 0px; width: 0px'>
+		<form enctype="multipart/form-data" action="scripts/upload.php" method="POST">
+			<input type=file id=fileUpload name=file style="visibility: hidden">
+			<input type=hidden id=fileDir name=dir value="test">
+			<input type=submit id=fileSubmit style="visibility: hidden">
+		</form>
+	</div>
+</div>
+
+
+<script>
+	$('#fileUpload').change( function() {
+		$('#fileSubmit').click();
+		console.log('Submitted.');
+	});
+</script>
+
 	
 <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
 	
