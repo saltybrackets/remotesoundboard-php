@@ -1,6 +1,7 @@
 /*=========================================================================================
 				Globals
 -----------------------------------------------------------------------------------------*/		
+	// TODO: Refactor into class structure, globals === No-no.
 	var soundFileURL;
 	var interfaceReady = false;
 	var ajaxListen = null;
@@ -49,6 +50,7 @@ $(document).ready( function() {
 		});
 		
 		// Checkbox: Act as speaker.
+		// TODO: Refactor HTML elements to be more modular, use constants.
 		$('#chkSpeaker').click( function() {
 			if ( $('#chkSpeaker').is(':checked') )
 			{
@@ -79,6 +81,7 @@ $(document).ready( function() {
 	
 	/* ---------- Make Directory --------- */
 		// Button: Create
+		// TODO: Convert later to use a database once one is acquired.
 		$('#btnMakeDir').click( function () {
 			popup.hide('popupMakeDir');
 			popup.message('Creating folder: <span style="color:darkslategrey">' + currentDir + 
@@ -104,6 +107,7 @@ $(document).ready( function() {
 	/**
 	 * Have the soundboard act as a speaker, and poll the server repeatedly to see if there
 	 * is a sound to play. Loops infinitely as long as the speaker checkbox is checked.
+	 * PHP backend uses long polling to reduce bandwidth and resource usage.
 	 */
 	function sbListen()
     {
