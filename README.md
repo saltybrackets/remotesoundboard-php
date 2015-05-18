@@ -1,4 +1,4 @@
-# remotesoundboard
+# Remote Soundboard #
 Page to add and play sounds to a remote sound source.
 Act as a sound source, and you'll be able to hear all sounds played on the selected channel.
 Meant to be a simple "drag/drop" solution, there is no database required; just drop all files onto your web server, and you're ready to go!
